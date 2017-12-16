@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static%}
+    <link rel="stylesheet" href="{% static "main_app/style.css"%}">
+    <title>Travel Dashboard</title>
+</head>
+<body>
+    <div class="wrapper">
+        <br>
+        <p><a href="/main_app/logout">Logout</a></p>
+        <br>
+        <h2>Welcome, {{user.user_name}}!</h2>
+        <br>
+        <br>
+        <div>
+            <h3>Your Trip Schedules</h3>            
+            <table class="tables">
+                <thead>
+                    <tr>
+                        <th>Destination</th>
+                        <th>Travel Start Date</th>
+                        <th>Travel End Date</th>
+                        <th>Plan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for trip in myplan %}
+                    <tr>
+                        <td><p><a href="{{trip.id}}/read">{{trip.destination}}</a></p></td>
+                        <td>{{trip.start_date}}</td>
+                        <td>{{trip.end_date}}</td>
+                        <td>{{trip.desc}}</td>
+                    </tr>
+                    {% endfor %}
+                    {% for trip in myplan2 %}
+                    <tr>
+                        <td><p><a href="{{trip.id}}/read">{{trip.destination}}</a></p></td>
+                        <td>{{trip.start_date}}</td>
+                        <td>{{trip.end_date}}</td>
+                        <td>{{trip.desc}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <div>
+            <h3>Your Trip Schedules</h3>            
+            <table class="tables">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Destination</th>
+                        <th>Travel Start Date</th>
+                        <th>Travel End Date</th>
+                        <th>Do You Want to Join?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for trip in otherplan %}
+                    <tr>
+                        <td>{{trip.user.user_name}}</td>
+                        <td><p><a href="{{trip.id}}/read">{{trip.destination}}</a></p></td>
+                        <td>{{trip.start_date}}</td>
+                        <td>{{trip.end_date}}</td>
+                        <td><a href="{{trip.id}}/update">Join</a><td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+        <h3><a href="/maim_app/new">Add Travel Plan</a></h3>
+
+    </div>  
+</body>
+</html>

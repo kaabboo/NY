@@ -1,0 +1,13 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.registration{
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid black;
+}
+.login{
+    display: inline-block;
+    vertical-align: top;
+}

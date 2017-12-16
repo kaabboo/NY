@@ -1,0 +1,29 @@
+*{
+    margin: 10px;
+    padding: 0px;
+}
+
+.login{
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+}
+.registrations{
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    display: inline-block;
+    vertical-align: top;
+}
+.button1{
+    float: right;  
+}
+
+.button2{
+    float: right;  
+}
